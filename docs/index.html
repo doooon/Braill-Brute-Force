@@ -6,7 +6,7 @@
 	<meta name="format-detection" content="telephone=no">
   <meta name="robots" content="noindex,nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>braill Brute Force</title>
+	<title>Braille Brute Force</title>
 	<script type="text/javascript" charset="utf-8">
 	
 //バイナリをbraille点字へ変換
@@ -141,7 +141,7 @@ function bin2brailleAscii(bin,flag) {
 
 // -------------------------------------------------------
 
-function BraillBruteForce(str) {
+function BrailleBruteForce(str) {
     
   /*
   // test用
@@ -158,7 +158,7 @@ function BraillBruteForce(str) {
   var result=[];
   var targetElm=document.getElementById('resultString');
   
-  function GoBraill() {
+  function GoBraille() {
     result.push( bin2brailleAscii(str) );
     result.push( bin2brailleAscii(str,"switch") );
     result.push( bin2brailleAscii(str,"orikaeshi") );
@@ -176,22 +176,22 @@ function BraillBruteForce(str) {
     targetElm.value="binary length: "+str.length+"\n"+str.length+"%6 = "+str.length%6+"\n6で割れません (Not divisible by 6)";
   } else {
     result.push( "*** normal ***" );
-    GoBraill();
+    GoBraille();
     
     // reverse
     str=str.split("").reverse().join("");
     result.push( "\n*** reverse ***" );
-    GoBraill();
+    GoBraille();
   
     // 0/1 swap
     str=str.split("").reverse().join("").replace(/0/g,"2").replace(/1/g,"0").replace(/2/g,"1" );
     result.push( "\n*** swap ***" );
-    GoBraill();
+    GoBraille();
   
     // reverse
     str=str.split("").reverse().join("");
     result.push( "\n*** swap reverse ***" );
-    GoBraill();
+    GoBraille();
         
     /*
     for (var i in result) {
@@ -208,11 +208,11 @@ function BraillBruteForce(str) {
 	</script>
 </head>
 <body>
-	<h1>Braill Brute Force</h1>
+	<h1>Braille Brute Force</h1>
 	<div>
 	  <h3>enter binary string</h3>
-	  <input type="text" id="inputBin" value="" style="width: 90%" onchange="BraillBruteForce(this.value)" onautofocus>
-	  <input type="button" value="go braill" onClick="BraillBruteForce(document.getElementById('inputBin').value)"><br>
+	  <input type="text" id="inputBin" value="" style="width: 90%" onchange="BrailleBruteForce(this.value)" onautofocus>
+	  <input type="button" value="go Braille" onClick="BrailleBruteForce(document.getElementById('inputBin').value)"><br>
     <span style="font-sze: 50%">モールス信号でもOK (Morse code OK)</span>
 
 	</div>
