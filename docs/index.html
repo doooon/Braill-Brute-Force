@@ -162,10 +162,15 @@ function BraillBruteForce(str) {
     result.push( bin2brailleAscii(str,"3line") );
   }
   
+  // モールス信号の場合はバイナリに変換
+  if (str.match(/^[.\-\s]+$/)) {
+   str=str.replace(/\./g, "0").replace(/-/g, "1").replace(/\s/g, "");
+  }
+  
   if (str.match(/[^01]/)) {
     targetElm.value="binary...?";
   } else if (str.length%6!=0) {
-    targetElm.value="binary length: "+str.length+"\n6で割れません";
+    targetElm.value="binary length: "+str.length+"\n"+str.length+"%6 = "+str.length%6+"\n6で割れません (Not divisible by 6)";
   } else {
     result.push( "*** normal ***" );
     GoBraill();
@@ -204,7 +209,9 @@ function BraillBruteForce(str) {
 	<div>
 	  <h3>enter binary string</h3>
 	  <input type="text" id="inputBin" value="" style="width: 90%" onchange="BraillBruteForce(this.value)" onautofocus>
-	  <input type="button" value="go braill" onClick="BraillBruteForce(document.getElementById('inputBin').value)">
+	  <input type="button" value="go braill" onClick="BraillBruteForce(document.getElementById('inputBin').value)"><br>
+    <span style="font-sze: 50%">モールス信号でもOK (Morse code OK)</span>
+
 	</div>
 	<div>
     <h3>result strings</h3>
