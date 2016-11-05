@@ -177,7 +177,7 @@ function BraillBruteForce(str) {
     str=str.split("").reverse().join("");
     result.push( "\n*** swap reverse ***" );
     GoBraill();
-    
+        
     /*
     for (var i in result) {
       result[i]=result[i].replace(/</ig, "&lt;");
@@ -202,7 +202,13 @@ function BraillBruteForce(str) {
 	</div>
 	<div>
     <h3>result strings</h3>
-    <textarea id="resultString" cols=40 rows=30 style="font-family: monospace; font-size: 100%" readonly></textarea>
+    <textarea id="resultString" cols=40 rows=30 style="font-family: monospace; font-size: 100%" readonly></textarea><br>
+    <span style="font-size: 70%">
+    1: 縦に3つずつ<br>
+    2: 横に2つずつ<br>
+    3: 縦に3つずつ折り返し<br>
+    4: 3行に分けて縦3つずつ
+    </span>
 	</div>
 </body>
 </html>
