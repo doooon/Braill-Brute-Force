@@ -91,29 +91,34 @@ function bin2brailleAscii(bin,flag) {
   var tmp=bin.match(/.{6}/g);
   var result="";
 
-  if (flag=="switch") {
-    // ①②
-    // ③④
-    // ⑤⑥
-    // 135246
-    for (var i in tmp) {
-      tmp[i]=tmp[i].replace(
-        /(.)(.)(.)(.)(.)(.)/, "$1$3$5$2$4$6");
-    }
-  }
-
-  if (flag=="orikaeshi") {
-    // ①⑥
-    // ②⑤
-    // ③④
-    // 123654
-    for (var i in tmp) {
-      tmp[i]=tmp[i].replace(
-        /(.)(.)(.)(.)(.)(.)/, "$1$2$3$6$5$4");
-    }
-  }
-
-  if (flag=="3line") {
+  if (flag=="switch") {
+    // ①②
+    // ③④
+    // ⑤⑥
+    // 135246
+    for (var i in tmp) {
+      tmp[i]=tmp[i].replace(
+        /(.)(.)(.)(.)(.)(.)/, "$1$3$5$2$4$6");
+    }
+  } else if (flag=="orikaeshi") {
+    // ①⑥
+    // ②⑤
+    // ③④
+    // 123654
+    for (var i in tmp) {
+      tmp[i]=tmp[i].replace(
+        /(.)(.)(.)(.)(.)(.)/, "$1$2$3$6$5$4");
+    }
+  } else if (flag=="uzumaki") {
+    // ①②
+    // ⑥③
+    // ⑤④
+    // 165234
+    for (var i in tmp) {
+      tmp[i]=tmp[i].replace(
+        /(.)(.)(.)(.)(.)(.)/, "$1$6$5$2$3$4");
+    }
+  } else if (flag=="3line") {
     // ①②③…
     // ④⑤⑥…
     // ⑦⑧⑨…
