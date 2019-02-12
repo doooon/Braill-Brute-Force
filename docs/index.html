@@ -173,6 +173,7 @@ function BrailleBruteForce(str) {
     result.push( bin2brailleAscii(str) );
     result.push( bin2brailleAscii(str,"switch") );
     result.push( bin2brailleAscii(str,"orikaeshi") );
+    result.push( bin2brailleAscii(str,"uzumaki") );
     result.push( bin2brailleAscii(str,"3line") );
   }
   
@@ -234,7 +235,8 @@ function BrailleBruteForce(str) {
     1: 縦に3つずつ<br>
     2: 横に2つずつ<br>
     3: 縦に3つずつ折り返し<br>
-    4: 3行に分けて縦3つずつ
+    4: 横2つから縦に渦巻き<br>
+    5: 3行に分けて縦3つずつ
     </span>
 	</div>
 </body>
