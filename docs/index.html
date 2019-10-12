@@ -182,6 +182,9 @@ function BrailleBruteForce(str) {
    str=str.replace(/\./g, "0").replace(/-/g, "1").replace(/\s/g, "");
   }
   
+  // スペースを削除
+  str=str.replace(/\s+/g, "");
+
   if (str.match(/[^01]/)) {
     targetElm.value="binary...?";
   } else if (str.length%6!=0) {
